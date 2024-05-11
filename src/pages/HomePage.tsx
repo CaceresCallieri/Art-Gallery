@@ -15,7 +15,7 @@ const HomePage = () => {
             <main>
                 <section className="hero">
                     <div className="welcome">
-                        <img src="src\assets\images\image-hero.webp" alt="" />
+                        <img src="images\image-hero.webp" alt="" />
                         <h1 className="logo">
                             MODERN <br />ART GALLERY
                         </h1>
@@ -47,13 +47,13 @@ const HomePage = () => {
                             </p>
                         </motion.div>
 
-                        <Picture imageSrc="src\assets\images\image-grid-1.webp" altText="" id="picture-1" />
+                        <Picture imageSrc=" images\image-grid-1.webp" altText="" id="picture-1" />
                     </div>
 
                     <div className="lower-article">
-                        <Picture imageSrc="src\assets\images\image-grid-2.webp" altText="" id="picture-2" />
+                        <Picture imageSrc="images\image-grid-2.webp" altText="" id="picture-2" />
 
-                        <Picture imageSrc="src\assets\images\image-grid-3.webp" altText="" id="picture-3" />
+                        <Picture imageSrc="images\image-grid-3.webp" altText="" id="picture-3" />
 
                         <motion.div className="text-block black" id="text-block-2"
                             initial={{ opacity: 0, x: 100 }}
