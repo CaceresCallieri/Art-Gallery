@@ -1,0 +1,39 @@
+@use '../utils/_colors.sass' as colors
+@use '../utils/_variables.sass' as variables
+
+section.our-location
+    background-color: colors.$black
+    color: colors.$white
+
+    @include variables.general-side-padding()
+    padding-top: 5rem
+    padding-bottom: 5rem 
+
+    display: flex
+    justify-content: space-between
+
+    h2
+        font-size: 5rem
+        width: 300px
+
+    .location
+        h4
+            font-size: 2rem
+            color: colors.$gold
+
+        width: 50%
+
+        display: flex
+        flex-direction: column
+        gap: 2rem
+
+@media (width <= 650px)
+    section.our-location
+        padding-top: 2rem
+        padding-bottom: 2rem
+
+        flex-direction: column
+        gap: 2rem
+        
+        .location
+            width: 100%

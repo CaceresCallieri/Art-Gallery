@@ -1,0 +1,532 @@
+.slide-in {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(21, 21, 21);
+  transform-origin: left;
+}
+
+.slide-out {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(21, 21, 21);
+  transform-origin: right;
+}
+
+a {
+  text-decoration: none;
+}
+
+button.navigation-button {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 1.5rem 1rem 2rem;
+  border: none;
+  background: linear-gradient(to right, rgb(21, 21, 21) 75%, rgb(213, 150, 108) 25%);
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+button.navigation-button::after {
+  content: "";
+  background: linear-gradient(to right, rgb(213, 150, 108) 75%, rgb(21, 21, 21) 25%);
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  transition: all 0.35s;
+}
+button.navigation-button .arrow {
+  display: grid;
+  place-items: center;
+}
+button.navigation-button:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+}
+
+button.navigation-button.reversed {
+  background: linear-gradient(to left, rgb(21, 21, 21) 75%, rgb(213, 150, 108) 25%);
+  padding: 1rem 2rem 1rem 1.5rem;
+}
+button.navigation-button.reversed::after {
+  background: linear-gradient(to left, rgb(213, 150, 108) 75%, rgb(21, 21, 21) 25%);
+  left: 100%;
+  right: -100%;
+}
+button.navigation-button.reversed:hover::after {
+  left: 0;
+  right: 0;
+}
+
+picture {
+  overflow: hidden;
+}
+picture img {
+  transition: transform 0.3s ease-in-out;
+}
+picture:hover img {
+  transform: scale(1.1);
+}
+
+section.our-location {
+  background-color: rgb(21, 21, 21);
+  color: rgb(255, 255, 255);
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media (width <= 1565px) {
+  section.our-location {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (width <= 1565px) and (width <= 1200px) {
+  section.our-location {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+section.our-location h2 {
+  font-size: 5rem;
+  width: 300px;
+}
+section.our-location .location {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+section.our-location .location h4 {
+  font-size: 2rem;
+  color: rgb(213, 150, 108);
+}
+
+@media (width <= 650px) {
+  section.our-location {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  section.our-location .location {
+    width: 100%;
+  }
+}
+footer {
+  background-color: rgb(21, 21, 21);
+  height: 210px;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(255, 255, 255);
+}
+@media (width <= 1565px) {
+  footer {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (width <= 1565px) and (width <= 1200px) {
+  footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+footer svg path {
+  fill: rgb(255, 255, 255);
+}
+footer .schedule {
+  display: flex;
+  gap: 10vw;
+}
+footer .schedule p {
+  font-size: clamp(0.9rem, 0.625vw + 0.775rem, 1.15rem);
+  width: 450px;
+}
+footer .social-icons {
+  display: flex;
+  gap: 2rem;
+}
+footer .social-icons a {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+footer .social-icons a svg path {
+  transition: fill 0.3s ease-in-out;
+}
+footer .social-icons a:hover path {
+  fill: rgb(213, 150, 108);
+}
+
+footer.gold-theme {
+  background-color: rgb(213, 150, 108);
+  color: rgb(21, 21, 21);
+}
+footer.gold-theme svg path {
+  fill: rgb(21, 21, 21);
+}
+footer.gold-theme .social-icons a:hover path {
+  fill: rgb(255, 255, 255);
+}
+
+@media (width <= 850px) {
+  footer {
+    height: auto;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  footer .schedule {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  footer .schedule p {
+    width: 100%;
+  }
+}
+main section.hero {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  background: linear-gradient(to right, rgb(21, 21, 21) 50%, rgb(255, 255, 255) 50%);
+  width: 100%;
+  height: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (width <= 1565px) {
+  main section.hero {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (width <= 1565px) and (width <= 1200px) {
+  main section.hero {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+main section.hero .welcome img {
+  position: absolute;
+  left: 33%;
+  width: 540px;
+}
+main section.hero .welcome h1.logo {
+  position: absolute;
+  z-index: 1;
+  top: 19%;
+  color: rgb(255, 255, 255);
+  mix-blend-mode: difference;
+}
+main section.hero .location-container {
+  position: absolute;
+  top: 19%;
+  right: 15vw;
+  z-index: 4;
+  width: 300px;
+}
+@media (width <= 1565px) {
+  main section.hero .location-container {
+    right: 10vw;
+  }
+}
+@media (width <= 1200px) {
+  main section.hero .location-container {
+    right: 5vw;
+  }
+}
+main article {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media (width <= 1565px) {
+  main article {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (width <= 1565px) and (width <= 1200px) {
+  main article {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+main article img {
+  width: 100%;
+  height: 100%;
+}
+main article .text-block {
+  padding: 4rem 12rem 4rem 0;
+}
+main article .text-block h2 {
+  margin-bottom: 2rem;
+}
+main article .text-block.black {
+  padding: 4rem;
+  background-color: rgb(21, 21, 21);
+  color: rgb(255, 255, 255);
+}
+main article .upper-article {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+main article .upper-article #text-block-1 {
+  width: 40%;
+}
+main article .upper-article #picture-1 {
+  width: 60%;
+  overflow: hidden;
+}
+main article .lower-article {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+main article .lower-article #picture-2 {
+  grid-column: 1/4;
+  grid-row: 1/3;
+}
+main article .lower-article #picture-3 {
+  grid-column: 4/6;
+}
+main article .lower-article #text-block-2 {
+  grid-column: 4/6;
+  grid-row: 2/3;
+}
+
+@media (width <= 1565px) {
+  main article .text-block {
+    padding: 4rem 8rem 4rem 0;
+  }
+  main article .upper-article #text-block-1 {
+    width: 50%;
+  }
+  main article .upper-article #picture-1 {
+    width: 50%;
+  }
+  main article .lower-article {
+    grid-template-rows: repeat(2, 450px);
+  }
+  main article .lower-article #text-block-2 {
+    padding: 3rem;
+  }
+}
+@media (width <= 1200px) {
+  main article .text-block {
+    padding: 4rem 4rem 4rem 0;
+  }
+  main article .upper-article #text-block-1 {
+    width: 60%;
+  }
+  main article .upper-article #picture-1 {
+    width: 40%;
+  }
+  main article .lower-article {
+    grid-template-rows: repeat(2, 400px);
+  }
+  main article .lower-article #text-block-2 {
+    padding: 2rem;
+  }
+}
+@media (width <= 1000px) {
+  main section.hero {
+    background: none;
+  }
+  main section.hero .welcome img {
+    left: 0;
+  }
+}
+@media (width <= 930px) {
+  main section.hero {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+  }
+  main section.hero .welcome img {
+    padding: 0;
+    position: relative;
+    aspect-ratio: 4/3;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  main section.hero .welcome h1.logo {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    position: relative;
+    color: rgb(21, 21, 21);
+  }
+}
+@media (width <= 930px) and (width <= 1565px) {
+  main section.hero .welcome h1.logo {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (width <= 930px) and (width <= 1565px) and (width <= 1200px) {
+  main section.hero .welcome h1.logo {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+@media (width <= 930px) {
+  main section.hero .location-container {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    position: relative;
+    right: 0;
+    display: block;
+    width: 100%;
+  }
+}
+@media (width <= 930px) and (width <= 1565px) {
+  main section.hero .location-container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (width <= 930px) and (width <= 1565px) and (width <= 1200px) {
+  main section.hero .location-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+@media (width <= 930px) {
+  main article .text-block {
+    padding: 1rem;
+  }
+  main article .upper-article {
+    flex-direction: column-reverse;
+  }
+  main article .upper-article #text-block-1 {
+    width: 100%;
+  }
+  main article .upper-article #picture-1 {
+    width: 100%;
+  }
+  main article .lower-article {
+    display: flex;
+    flex-direction: column;
+  }
+  main article .lower-article #text-block-2 {
+    padding: 2rem;
+  }
+}
+.location-page main button.navigation-button {
+  position: absolute;
+  z-index: 1;
+  margin-top: 0;
+  top: 0;
+  left: 15vw;
+}
+.location-page main #map {
+  height: 40rem;
+}
+.location-page main #map .leaflet-container {
+  height: 100%;
+  z-index: 0;
+}
+
+@media (width <= 1565px) {
+  .location-page main button.navigation-button {
+    left: 10vw;
+  }
+}
+@media (width <= 1200px) {
+  .location-page main button.navigation-button {
+    left: 5vw;
+  }
+}
+@media (width <= 500px) {
+  .location-page main button.navigation-button {
+    left: 0;
+  }
+}
+:root {
+  font-family: "Outfit", system-ui, sans-serif;
+  line-height: 2em;
+  font-weight: 300;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, button {
+  font-family: "Big Shoulders Display";
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: clamp(4.5rem, 6.25vw + 3.25rem, 7rem);
+}
+
+h2 {
+  font-size: clamp(3rem, 3.75vw + 2.25rem, 4.5rem);
+}
+
+p {
+  font-size: clamp(1.15rem, 0.875vw + 0.975rem, 1.5rem);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(213, 150, 108) rgba(255, 255, 255, 0.1);
+}
+html::-webkit-scrollbar {
+  width: 12px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: rgb(213, 150, 108);
+  border-radius: 6px;
+}
+html::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+}
+
+::-moz-selection {
+  background-color: rgb(213, 150, 108);
+}
+
+::selection {
+  background-color: rgb(213, 150, 108);
+}/*# sourceMappingURL=Global.css.map */

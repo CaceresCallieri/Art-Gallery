@@ -1,0 +1,70 @@
+@use '../utils/_colors.sass' as colors
+@use '../utils/_variables.sass' as variables
+@use '../utils/_fluidFontSize.sass'
+
+footer
+    background-color: colors.$black
+    height: 210px
+    @include variables.general-side-padding()
+    padding-top: 5rem
+
+    display: flex
+    justify-content: space-between
+    color: colors.$white
+
+    svg
+        path
+            fill: colors.$white
+
+    .schedule
+        display: flex
+        gap: 10vw
+
+        p
+            font-size: #{fluidFontSize.fluidFontSize(0.9rem, 1.15rem)}
+            width: 450px
+
+    .social-icons
+        display: flex
+        gap: 2rem
+
+        a
+            height: fit-content
+
+            svg
+                path
+                    transition: fill 0.3s ease-in-out
+
+            &:hover
+                path
+                    fill: colors.$gold
+
+footer.gold-theme
+    background-color: colors.$gold
+    color: colors.$black
+
+    svg
+        path
+            fill: colors.$black
+
+    .social-icons
+        a
+            &:hover
+                path
+                    fill: colors.$white
+
+
+@media (width <= 850px)
+    footer
+        height: auto
+        flex-direction: column
+        gap: 2rem
+        padding-top: 3rem
+        padding-bottom: 2rem
+
+        .schedule
+            flex-direction: column
+            gap: 2rem
+
+            p
+                width: 100%

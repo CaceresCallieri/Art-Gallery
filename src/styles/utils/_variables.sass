@@ -1,0 +1,27 @@
+
+$breakpoint-medium: 1565px
+$breakpoint-small: 1200px
+
+@mixin general-side-padding()
+    padding-left: 15vw
+    padding-right: 15vw
+
+    @media (width <= $breakpoint-medium)
+        padding-left: 10vw
+        padding-right: 10vw
+
+        @media (width <= $breakpoint-small)
+            padding-left: 5vw
+            padding-right: 5vw
+
+@mixin location-container-position()
+    position: absolute
+    top: 19%
+    right: 15vw
+    z-index: 4
+
+    @media (width <= $breakpoint-medium)
+        right: 10vw
+
+    @media (width <= $breakpoint-small)
+        right: 5vw

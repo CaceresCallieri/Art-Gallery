@@ -1,0 +1,33 @@
+.location-page
+    main
+        button.navigation-button
+            position: absolute
+            z-index: 1
+            margin-top: 0
+            top: 0
+            left: 15vw
+
+        #map
+            height: 40rem
+
+            .leaflet-container
+                height: 100%
+                z-index: 0
+
+@media (width <= 1565px)            
+    .location-page
+        main
+            button.navigation-button
+                left: 10vw
+
+@media (width <= 1200px)
+    .location-page
+        main
+            button.navigation-button
+                left: 5vw
+
+@media (width <= 500px)
+    .location-page
+        main
+            button.navigation-button
+                left: 0

@@ -1,0 +1,17 @@
+@use 'sass:math'
+
+$default-min-bp: 20rem  // 320px
+$default-max-bp: 60rem // 960px
+
+// @function round($number, $decimals: 0)
+//     $n: 1
+//     @if $decimals > 0
+//         @for $i from 1 through $decimals
+//             $n: $n * 10
+//     @return math.div(math.round($number * $n), $n)
+
+@function fluidFontSize($min-size, $max-size, $min-breakpoint: $default-min-bp, $max-breakpoint: $default-max-bp, $unit: vw)
+    $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint)
+    $slope-to-unit: $slope * 100
+    $intercept-rem: $min-size - $slope * $min-breakpoint
+    @return clamp(#{$min-size}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size})
